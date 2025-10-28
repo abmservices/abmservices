@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #222;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-bottom: 3px solid #7a287d;
+}
+
+.logo h1 {
+  color: #7a287d;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.circle {
+  display: inline-block;
+  border: 3px solid #7a287d;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.circle .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7a287d;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Info */
+.info {
+  background-color: #7a287d;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 1.8rem;
+}
+
+.contact-card h3 {
+  margin: 8px 0 16px;
+  font-size: 1.4rem;
+}
+
+.contact-card a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* Form */
+.form-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.form-section h2 {
+  color: #7a287d;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 2px solid #7a287d;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  background-color: #7a287d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5d1f5f;
+}
+
+#status {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  background-color: #7a287d;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}

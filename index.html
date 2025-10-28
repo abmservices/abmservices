@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABM Services | Printers • Cartridges • CCTV</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("ABxQ2mUgZFgF1JDyA"); // 🔹 Replace with your EmailJS Public Key
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="circle">
+        <span class="text">ABM</span>
+      </div>
+      <h1>ABM SERVICES</h1>
+    </div>
+    <p class="tagline">
+      Dealing in Printers, Cartridges, Refilling, Photocopier & CCTV Cameras
+    </p>
+  </header>
+
+  <!-- Info Section -->
+  <section class="info">
+    <div class="contact-card">
+      <h2>Abid Ansari</h2>
+      <h3>9821405953</h3>
+      <p>
+        Jubilee Compound, C-wing 15/A,<br />
+        Shaikh Hafizuddin Marg, Sankli Street,<br />
+        Byculla, Mumbai 400008.
+      </p>
+      <p>Email: <a href="mailto:abid@abmservices.in">abid@abmservices.in</a></p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="form-section">
+    <h2>Book a Service or Enquiry</h2>
+    <form id="contactForm">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="from_email" placeholder="Your Email" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="address" placeholder="Your Address" required />
+      
+      <select name="service_type" required>
+        <option value="">Select Service Type</option>
+        <option value="Printer Repair">Printer Repair</option>
+        <option value="Cartridge Refill">Cartridge Refill</option>
+        <option value="Photocopier Service">Photocopier Service</option>
+        <option value="CCTV Installation">CCTV Installation</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea name="description" rows="4" placeholder="Describe your issue or requirement" required></textarea>
+
+      <button type="submit">Send Request</button>
+    </form>
+    <p id="status"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 ABM Services | All Rights Reserved</p>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const statusText = document.getElementById("status");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      statusText.innerHTML = "Sending... ⏳";
+
+      emailjs.sendForm("service_26hxf6p", "template_zwmfku6", this)
+        .then(() => {
+          statusText.innerHTML = "✅ Your request has been sent successfully!";
+          form.reset();
+        }, (err) => {
+          console.error("Error:", err);
+          statusText.innerHTML = "❌ Failed to send. Please try again later.";
+        });
+    });
+  </script>
+</body>
+</html>
