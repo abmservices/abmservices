@@ -73,23 +73,27 @@
   </footer>
 
   <!-- EmailJS Script -->
-  <script>
-    const form = document.getElementById("contactForm");
-    const statusText = document.getElementById("status");
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("ABxQ2mUgZFgF1JDyA"); // Replace this 
+  })();
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      statusText.innerHTML = "Sending... ⏳";
+  const form = document.getElementById('contactForm');
 
-      emailjs.sendForm("service_26hxf6p", "template_zwmfku6", this)
-        .then(() => {
-          statusText.innerHTML = "✅ Your request has been sent successfully!";
-          form.reset();
-        }, (err) => {
-          console.error("Error:", err);
-          statusText.innerHTML = "❌ Failed to send. Please try again later.";
-        });
-    });
-  </script>
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_26hxf6p', 'template_zwmfku6', this) 
+      .then(() => {
+        alert('✅ Message sent successfully!');
+        form.reset();
+      }, (error) => {
+        alert('❌ Failed to send message. Check console for details.');
+        console.log('Error:', error);
+      });
+  });
+</script>
 </body>
 </html>
+
