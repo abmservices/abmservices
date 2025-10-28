@@ -1,26 +1,30 @@
-// ✅ Initialize EmailJS with your Public Key
+// Initialize EmailJS
 (function() {
-  emailjs.init("ABxQ2mUgZFgF1JDyA"); // Replace with your actual Public Key
+  emailjs.init("ABxQ2mUgZFgF1JDyA"); // Your Public Key
 })();
 
-// ✅ Handle form submission
+// Form submission
 document.getElementById("serviceForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  // Send data using EmailJS
-  emailjs.send("service_26hxf6p", "template_zwmfku6", {
-    from_name: document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
+  // Collect form data
+  const params = {
+    from_name: document.getElementById("from_name").value,
+    from_email: document.getElementById("from_email").value,
     phone: document.getElementById("phone").value,
     address: document.getElementById("address").value,
     service: document.getElementById("service").value,
     message: document.getElementById("message").value
-  })
-  .then(function() {
+  };
+
+  // Send the email
+  emailjs.send("service_26hxf6p", "template_zwmfku6", params)
+  .then(() => {
     alert("✅ Your service request has been sent successfully!");
     document.getElementById("serviceForm").reset();
-  }, function(error) {
-    alert("❌ Failed to send message. Please check console for details.");
-    console.log("EmailJS Error:", error);
+  })
+  .catch((error) => {
+    console.error("EmailJS Error:", error);
+    alert("❌ Failed to send message. Please check your EmailJS setup.");
   });
 });
