@@ -7,68 +7,97 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <div class="circle">
-        <span class="arrow left"></span>
-        <span class="text">ABM</span>
-        <span class="arrow right"></span>
-      </div>
-      <h1>ABM SERVICES</h1>
-    </div>
-    <p class="tagline">
-      Dealing in Printers, Cartridges, Refilling, Photocopier & CCTV Cameras
-    </p>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">ABM Services</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- About / Contact Info -->
-  <section class="info">
-    <div class="contact-card">
-      <h2>Abid Ansari</h2>
-      <h3>9821405953</h3>
-      <p>
-        Jubilee Compound, C-wing 15/A,<br />
-        Shaikh Hafizuddin Marg, Sankli Street,<br />
-        Byculla, Mumbai 400008.
-      </p>
-      <p>Email: <a href="mailto:abid@abmservices.in">abid@abmservices.in</a></p>
-      <div class="brands">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/HP_logo_2012.svg" alt="HP" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Canon_logo.svg" alt="Canon" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Epson_logo.svg" alt="Epson" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Brother_logo.svg" alt="Brother" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Sharp_logo.svg" alt="Sharp" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Panasonic_logo_%282013%29.svg" alt="Panasonic" />
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to ABM Services</h1>
+      <p>Dealing in Printers, Cartridges, Refilling, Photocopier & CCTV Cameras</p>
+      <a href="#order" class="btn">Book a Service</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      ABM Services, located in Byculla, Mumbai, is a trusted name in printer and CCTV servicing.
+      We deal in refilling, repair, and installation services for top brands like HP, Canon, Samsung, Epson, Brother, and more.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Printer Repair</h3>
+        <p>Expert repair services for inkjet and laser printers of all brands.</p>
+      </div>
+      <div class="service-card">
+        <h3>Cartridge Refilling</h3>
+        <p>High-quality refilling for HP, Canon, Epson, and Brother cartridges.</p>
+      </div>
+      <div class="service-card">
+        <h3>Photocopier Maintenance</h3>
+        <p>Reliable maintenance for office photocopier machines.</p>
+      </div>
+      <div class="service-card">
+        <h3>CCTV Installation</h3>
+        <p>Installation and setup of CCTV cameras for home and office security.</p>
       </div>
     </div>
   </section>
 
-  <!-- Form -->
-  <section class="form-section">
-    <h2>Get in Touch</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <input type="text" id="phone" placeholder="Your Phone Number" required />
-      <textarea id="message" rows="4" placeholder="Your Message"></textarea>
-      <button type="submit">Submit</button>
+  <!-- Order Form -->
+  <section id="order" class="order">
+    <h2>Book a Service</h2>
+    <form id="serviceForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="phone" placeholder="Mobile Number" required>
+      <input type="text" id="address" placeholder="Address / Location" required>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option>Printer Repair</option>
+        <option>Cartridge Refilling</option>
+        <option>Photocopier Maintenance</option>
+        <option>CCTV Installation</option>
+      </select>
+      <textarea id="message" rows="4" placeholder="Describe your issue"></textarea>
+      <button type="submit">Submit Request</button>
     </form>
   </section>
 
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Jubilee Compound, C-wing 15/A, Shaikh Hafizuddin Marg, Sankli Street, Byculla, Mumbai 400008</p>
+    <p><strong>Phone:</strong> <a href="tel:9821405953">9821405953</a></p>
+    <p><strong>Email:</strong> <a href="mailto:abid@abmservices.in">abid@abmservices.in</a></p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 ABM Services | All Rights Reserved</p>
+    <p>© 2025 ABM Services | Designed by Rayyan Ansari</p>
   </footer>
 
-  <script>
-    // Simple form handler (for demo)
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      alert('Thank you! Your message has been submitted.');
-      form.reset();
-    });
-  </script>
+    ...
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
