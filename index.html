@@ -5,95 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ABM Services | Printers • Cartridges • CCTV</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- EmailJS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("ABxQ2mUgZFgF1JDyA"); // 🔹 Replace with your EmailJS Public Key
-    })();
-  </script>
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <div class="circle">
-        <span class="text">ABM</span>
-      </div>
-      <h1>ABM SERVICES</h1>
-    </div>
-    <p class="tagline">
-      Dealing in Printers, Cartridges, Refilling, Photocopier & CCTV Cameras
-    </p>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">ABM Services</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Info Section -->
-  <section class="info">
-    <div class="contact-card">
-      <h2>Abid Ansari</h2>
-      <h3>9821405953</h3>
-      <p>
-        Jubilee Compound, C-wing 15/A,<br />
-        Shaikh Hafizuddin Marg, Sankli Street,<br />
-        Byculla, Mumbai 400008.
-      </p>
-      <p>Email: <a href="mailto:abid@abmservices.in">abid@abmservices.in</a></p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Welcome to ABM Services</h1>
+      <p>We provide reliable <strong>Printer, Cartridge, and CCTV</strong> solutions for your business and home.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="service-card">
+        <img src="printer.jpg" alt="Printer Service">
+        <h3>Printer Repair</h3>
+        <p>We fix all types of printers — fast and affordable service.</p>
+      </div>
+      <div class="service-card">
+        <img src="cartridge.jpg" alt="Cartridge Refill">
+        <h3>Cartridge Refill</h3>
+        <p>Save money with high-quality cartridge refilling and maintenance.</p>
+      </div>
+      <div class="service-card">
+        <img src="cctv.jpg" alt="CCTV Installation">
+        <h3>CCTV Installation</h3>
+        <p>Secure your home or office with professional CCTV setup.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Form -->
-  <section class="form-section">
-    <h2>Book a Service or Enquiry</h2>
-    <form id="contactForm">
-      <input type="text" name="from_name" placeholder="Your Name" required />
-      <input type="email" name="from_email" placeholder="Your Email" required />
-      <input type="text" name="phone" placeholder="Phone Number" required />
-      <input type="text" name="address" placeholder="Your Address" required />
-      
-      <select name="service_type" required>
-        <option value="">Select Service Type</option>
-        <option value="Printer Repair">Printer Repair</option>
-        <option value="Cartridge Refill">Cartridge Refill</option>
-        <option value="Photocopier Service">Photocopier Service</option>
-        <option value="CCTV Installation">CCTV Installation</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <textarea name="description" rows="4" placeholder="Describe your issue or requirement" required></textarea>
-
-      <button type="submit">Send Request</button>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" id="from_name" placeholder="Full Name" required />
+      <input type="email" id="from_email" placeholder="Email Address" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="text" id="address" placeholder="Your Address" required />
+      <input type="text" id="service" placeholder="Service Type (e.g. Printer Repair)" required />
+      <textarea id="message" placeholder="Describe your issue or request..." required></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
-    <p id="status"></p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 ABM Services | All Rights Reserved</p>
   </footer>
 
-  <!-- EmailJS Script -->
- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("ABxQ2mUgZFgF1JDyA"); // Replace this 
-  })();
-
-  const form = document.getElementById('contactForm');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm('service_26hxf6p', 'template_zwmfku6', this) 
-      .then(() => {
-        alert('✅ Message sent successfully!');
-        form.reset();
-      }, (error) => {
-        alert('❌ Failed to send message. Check console for details.');
-        console.log('Error:', error);
-      });
-  });
-</script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
