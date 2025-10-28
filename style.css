@@ -6,123 +6,172 @@
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #f7f7f7;
   color: #222;
+  scroll-behavior: smooth;
 }
 
-/* Header */
-.header {
-  text-align: center;
-  background-color: #fff;
-  padding: 40px 20px;
-  border-bottom: 3px solid #7a287d;
+/* Navbar */
+header {
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
-.logo h1 {
-  color: #7a287d;
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-.circle {
-  display: inline-block;
-  border: 3px solid #7a287d;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  position: relative;
-}
-
-.circle .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #7a287d;
 }
 
-.tagline {
-  margin-top: 10px;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Info */
-.info {
-  background-color: #7a287d;
+nav a {
   color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.contact-card h2 {
-  font-size: 1.8rem;
-}
-
-.contact-card h3 {
-  margin: 8px 0 16px;
-  font-size: 1.4rem;
-}
-
-.contact-card a {
-  color: #ffd700;
   text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* Form */
-.form-section {
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url('banner.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 50px 20px;
-  background-color: #fff;
+  color: white;
+  padding: 20px;
 }
 
-.form-section h2 {
-  color: #7a287d;
-  margin-bottom: 20px;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 90vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-text {
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #00bcd4;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0097a7;
+}
+
+/* Services */
+.services {
+  padding: 100px 40px 60px;
+  text-align: center;
+  background: white;
+}
+
+.services h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.service-card {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Contact */
+.contact {
+  background: #e8f5f8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 form {
+  max-width: 500px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 450px;
-  margin: 0 auto;
 }
 
-input, textarea, select {
-  padding: 10px;
-  border: 2px solid #7a287d;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-}
-
-button {
-  background-color: #7a287d;
-  color: white;
-  border: none;
+form input, form textarea {
   padding: 12px;
   border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+  width: 100%;
 }
 
-button:hover {
-  background-color: #5d1f5f;
+form textarea {
+  height: 120px;
+  resize: none;
 }
 
-#status {
-  margin-top: 15px;
-  font-weight: 500;
-}
-
+/* Footer */
 footer {
-  text-align: center;
-  background-color: #7a287d;
+  background: #111;
   color: white;
-  padding: 10px 0;
+  text-align: center;
+  padding: 15px 0;
   font-size: 0.9rem;
+  margin-top: 40px;
 }
