@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ABM Services | Printers • Cartridges • CCTV</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -67,8 +68,8 @@
   <section id="order" class="order">
     <h2>Book a Service</h2>
     <form id="serviceForm">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="from_name" placeholder="Full Name" required>
+      <input type="email" id="from_email" placeholder="Email" required>
       <input type="text" id="phone" placeholder="Mobile Number" required>
       <input type="text" id="address" placeholder="Address / Location" required>
       <select id="service" required>
@@ -96,8 +97,6 @@
     <p>© 2025 ABM Services | Designed by Rayyan Ansari</p>
   </footer>
 
-    ...
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
