@@ -47,10 +47,10 @@ nav a:hover {
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, #4b0082, #6a0dad); /* purple tone */
+  background: #5b2c83; /* simple purple background */
   color: white;
-  text-align: center;
-  padding: 100px 20px;
+
+
 }
 
 .hero h1 {
@@ -161,4 +161,5 @@ footer {
   padding: 15px;
   font-size: 0.9em;
 }
+
 
